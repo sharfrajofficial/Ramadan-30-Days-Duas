@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="hi" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>रमज़ान 30 दिन दुआएँ व 3D डिजिटल तस्बीह | Luxury Makkah Edition</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  
+  <!-- Premium Islamic & Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700&family=Orbitron:wght@600;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      box-sizing: border-box;
+    }
+    
+    .font-arabic { font-family: 'Amiri', serif; direction: rtl; }
+    .font-luxury { font-family: 'Cinzel', serif; }
+    .font-serif-lux { font-family: 'Playfair Display', serif; }
+    .font-sans-main { font-family: 'Outfit', sans-serif; }
+    .font-digital { font-family: 'Orbitron', monospace; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: rgba(5, 7, 15, 0.8); }
+    ::-webkit-scrollbar-thumb { background: rgba(217, 119, 6, 0.4); border-radius: 999px; }
+
+    /* Luxury Gold Gradients & Textures */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF7D6 0%, #F59E0B 45%, #D97706 70%, #FDE68A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-border-glow {
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      box-shadow: 0 0 20px rgba(217, 119, 6, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+
+    /* 3D Glassmorphic Master Card */
+    .card-luxury-3d {
+      background: linear-gradient(145deg, rgba(17, 24, 39, 0.82) 0%, rgba(9, 12, 22, 0.92) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 
+        0 30px 60px -15px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(245, 158, 11, 0.12),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.85);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    /* 3D Circular Beaded Tasbeeh Casing */
+    .tasbeeh-luxury-casing {
+      background: radial-gradient(circle at 40% 30%, #1e293b 0%, #0f172a 70%, #050811 100%);
+      box-shadow: 
+        0 25px 50px -10px rgba(0, 0, 0, 0.95),
+        0 0 35px rgba(217, 119, 6, 0.25),
+        inset 0 3px 6px rgba(255, 255, 255, 0.25),
+        inset 0 -8px 16px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Realistic 3D Brass/Gold Push Button */
+    .btn-gold-3d {
+      background: radial-gradient(circle at 35% 30%, #ffdf79, #d97706 65%, #78350f 100%);
+      box-shadow: 
+        0 10px 0 #451a03,
+        0 18px 25px rgba(0, 0, 0, 0.8),
+        inset 0 3px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -4px 6px rgba(0, 0, 0, 0.5);
+      transition: all 0.09s ease-out;
+      cursor: pointer;
+    }
+    .btn-gold-3d:active, .btn-gold-3d.active-press {
+      transform: translateY(7px);
+      box-shadow: 
+        0 3px 0 #451a03,
+        0 8px 12px rgba(0, 0, 0, 0.7),
+        inset 0 3px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Cyber Emerald OLED Display */
+    .oled-screen {
+      background: linear-gradient(180deg, #01140e 0%, #064e3b 50%, #022017 100%);
+      box-shadow: 
+        inset 0 4px 10px rgba(0, 0, 0, 0.95),
+        0 0 20px rgba(16, 185, 129, 0.22);
+    }
+
+    /* Glowing Beads Bead-string Simulation */
+    .tasbeeh-bead {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #fde68a, #d97706 70%, #78350f 100%);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.8), 0 0 8px rgba(245, 158, 11, 0.4);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .tasbeeh-bead.active-bead {
+      transform: scale(1.4);
+      background: radial-gradient(circle at 35% 30%, #fffbeb, #fbbf24 60%, #b45309 100%);
+      box-shadow: 0 0 16px #fbbf24, 0 3px 8px rgba(0,0,0,0.9);
+    }
+
+    /* Floating Lantern / Noor Animation */
+    @keyframes floatNoor {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+      50% { transform: translateY(-10px) rotate(1.5deg); opacity: 1; }
+    }
+    .noor-glow {
+      animation: floatNoor 6s ease-in-out infinite;
+    }
+
+    /* Pulse Glow */
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.3)); }
+      50% { filter: drop-shadow(0 0 28px rgba(245, 158, 11, 0.6)); }
+    }
+    .glow-effect {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="h-full font-sans-main text-slate-100 bg-[#060911] overflow-x-hidden selection:bg-amber-500 selection:text-black">
+
+  <!-- ========================================== -->
+  <!-- CINEMATIC MAKKAH KAABA BACKGROUND LAYER   -->
+  <!-- ========================================== -->
+  <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <!-- Ultra High Quality Kaaba Night Image with Fallback -->
+    <img 
+      id="makkah-bg" 
+      src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=85&w=1920" 
+      alt="Holy Kaaba Makkah Al Mukarramah at Night" 
+      class="w-full h-full object-cover object-center scale-105 transition-all duration-1000 filter brightness-50 contrast-110 saturate-110"
+      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=85&w=1920';"
+    />
+    
+    <!-- Rich Golden Dark Velvet Overlays for Readability -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#060913] via-[#090e1f]/85 to-[#05070f]/90"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/15 via-transparent to-black/80"></div>
+    
+    <!-- Holy Islamic Geometric Lattice Vignette -->
+    <div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none" style="background-image: radial-gradient(#fbbf24 1px, transparent 1px); background-size: 24px 24px;"></div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MAIN APP CONTAINER                         -->
+  <!-- ========================================== -->
+  <div class="relative z-10 min-h-full flex flex-col justify-between max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto px-4 py-6">
+
+    <!-- Top Luxury Header -->
+    <header class="text-center mb-6">
+      <!-- Islamic Badge Emblem -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-amber-500/40 backdrop-blur-xl shadow-lg shadow-amber-500/10 mb-3 noor-glow">
+        <span class="text-amber-400 text-lg">🕋</span>
+        <span class="text-xs uppercase tracking-[0.25em] font-luxury font-bold text-amber-300">مَكَّةُ الْمُكَرَّمَة • MAKKAH EDITION</span>
+        <span class="text-amber-400 text-lg">✨</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-luxury tracking-tight gold-gradient-text drop-shadow-lg glow-effect">
+        रमज़ान 30 दिन दुआएँ
+      </h1>
+      <p class="text-amber-200/85 text-xs sm:text-sm font-medium tracking-wide mt-1.5">
+        30 Sacred Duas • 3D Digital Tasbeeh Counter • पवित्र मक्का शरीफ़
+      </p>
+    </header>
+
+    <!-- Navigation Bar: Days Carousel Controls -->
+    <div class="flex items-center justify-between bg-slate-900/85 border border-amber-500/35 rounded-2xl p-2.5 mb-5 shadow-2xl backdrop-blur-2xl">
+      <button id="prev-btn" class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500/25 to-yellow-600/10 hover:from-amber-500/40 hover:to-yellow-500/20 active:scale-95 text-amber-300 flex items-center justify-center transition-all border border-amber-500/40 shadow-inner" aria-label="पिछला रोज़ा">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+
+      <div class="text-center px-2">
+        <div id="badge-day" class="text-amber-300 font-luxury font-extrabold text-lg sm:text-xl tracking-wider">पहला रोज़ा • Day 1</div>
+        <div class="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 font-medium">
+          <span class="swipe-hint">👈</span> स्वाइप करें (Swipe) <span class="swipe-hint">👉</span>
+        </div>
+      </div>
+
+      <button id="next-btn" class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500/25 to-yellow-600/10 hover:from-amber-500/40 hover:to-yellow-500/20 active:scale-95 text-amber-300 flex items-center justify-center transition-all border border-amber-500/40 shadow-inner" aria-label="अगला रोज़ा">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3D LUXURY DUA CARD                         -->
+    <!-- ========================================== -->
+    <main id="swipe-card" class="card-luxury-3d rounded-3xl border border-amber-500/40 overflow-hidden mb-8 transition-transform duration-300 cursor-grab active:cursor-grabbing">
+      
+      <!-- Top Royal Gold Header Ribbon -->
+      <div class="bg-gradient-to-r from-amber-700 via-amber-500 to-yellow-600 px-6 py-3 flex items-center justify-between text-slate-950 font-bold shadow-md">
+        <div class="flex items-center gap-2 text-xs sm:text-sm font-luxury tracking-wide">
+          <span>🕌</span>
+          <span>रमज़ान मुबारक़ • RAMADAN KAREEM</span>
+        </div>
+        <span id="theme-tag" class="text-[11px] sm:text-xs bg-slate-950/70 text-amber-300 px-3 py-1 rounded-full border border-amber-300/40 font-semibold uppercase tracking-wider">
+          इख़लास (Sincerity)
+        </span>
+      </div>
+
+      <!-- Holy Arabic Dua Section -->
+      <div class="p-6 sm:p-8 text-center bg-slate-950/50 border-b border-amber-500/20 relative">
+        <div class="absolute top-2 right-4 text-[10px] text-amber-400/60 uppercase font-luxury tracking-widest">Arabic Dua</div>
+        <p id="arabic-text" class="font-arabic text-3xl sm:text-4xl md:text-5xl text-amber-100 leading-[2.4] tracking-normal drop-shadow-md py-2">
+          اَللّٰهُمَّ اجْعَلْ صِيَامِيْ فِيْهِ صِيَامَ الصَّائِمِيْنَ
+        </p>
+      </div>
+
+      <!-- Hindi Talaaffuz (Pronunciation) -->
+      <div class="p-5 bg-gradient-to-r from-amber-500/10 via-amber-600/5 to-transparent border-b border-amber-500/20">
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="text-[11px] font-bold px-2.5 py-0.5 bg-amber-500/25 text-amber-300 rounded-md border border-amber-500/40 uppercase tracking-wider">
+            हिन्दी तलफ़्फ़ुज़ (उच्चारण)
+          </span>
+        </div>
+        <p id="hindi-trans" class="text-slate-100 text-base sm:text-lg font-medium leading-relaxed"></p>
+      </div>
+
+      <!-- Hindi Tarjuma (Meaning) -->
+      <div class="p-5 bg-gradient-to-r from-emerald-500/10 via-emerald-600/5 to-transparent border-b border-amber-500/20">
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="text-[11px] font-bold px-2.5 py-0.5 bg-emerald-500/25 text-emerald-300 rounded-md border border-emerald-500/40 uppercase tracking-wider">
+            हिन्दी तर्जुमा (अर्थ)
+          </span>
+        </div>
+        <p id="hindi-meaning" class="text-emerald-100 text-sm sm:text-base leading-relaxed"></p>
+      </div>
+
+      <!-- English Translation -->
+      <div class="p-5 bg-gradient-to-r from-blue-500/10 via-blue-600/5 to-transparent">
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="text-[11px] font-bold px-2.5 py-0.5 bg-blue-500/25 text-blue-300 rounded-md border border-blue-500/40 uppercase tracking-wider">
+            English Translation
+          </span>
+        </div>
+        <p id="english-trans" class="text-slate-200 text-xs sm:text-sm leading-relaxed italic font-light"></p>
+      </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- 3D LUXURY DIGITAL TASBEEH COUNTER          -->
+    <!-- ========================================== -->
+    <section class="mb-8">
+      <div class="flex items-center justify-between mb-3 px-2">
+        <h2 class="text-base sm:text-lg font-bold font-luxury text-amber-300 flex items-center gap-2">
+          <span>📿</span> 3D डिजिटल तस्बीह (Luxury Tasbeeh)
+        </h2>
+        <span id="tasbeeh-lap" class="text-xs bg-slate-900/90 border border-amber-500/40 text-amber-400 px-3 py-1 rounded-full font-semibold shadow-md">
+          चक्र (Lap): 0 / 33
+        </span>
+      </div>
+
+      <div class="tasbeeh-luxury-casing p-5 sm:p-6 rounded-3xl border border-amber-500/40 flex flex-col items-center relative overflow-hidden">
+        
+        <!-- Animated 3D Bead String Loop Visualizer -->
+        <div id="beads-bar" class="w-full flex justify-center items-center gap-2 py-2 mb-4 overflow-hidden">
+          <div class="tasbeeh-bead"></div>
+          <div class="tasbeeh-bead"></div>
+          <div class="tasbeeh-bead"></div>
+          <div class="tasbeeh-bead"></div>
+          <div class="tasbeeh-bead active-bead"></div>
+          <div class="tasbeeh-bead"></div>
+          <div class="tasbeeh-bead"></div>
+          <div class="tasbeeh-bead"></div>
+          <div class="tasbeeh-bead"></div>
+        </div>
+
+        <!-- Cyber Emerald OLED Tasbeeh Screen -->
+        <div class="oled-screen w-full rounded-2xl p-4 mb-6 flex justify-between items-center text-emerald-400 border border-emerald-500/40">
+          <div class="text-left">
+            <span class="text-[9px] tracking-widest text-emerald-500 uppercase font-bold block">CURRENT ZIKR</span>
+            <span id="tasbeeh-phrase" class="text-base sm:text-lg font-bold text-emerald-200">SubhanAllah</span>
+            <span id="tasbeeh-phrase-hi" class="text-xs text-emerald-400/90 block mt-0.5 font-medium">सुब्हानअल्लाह</span>
+          </div>
+          <div class="text-right">
+            <div id="tasbeeh-display" class="font-digital text-4xl sm:text-5xl font-black text-emerald-300 tracking-wider leading-none">
+              00
+            </div>
+            <span class="text-[9px] text-emerald-500 font-digital uppercase tracking-wider font-semibold">TARGET: 33</span>
+          </div>
+        </div>
+
+        <!-- 3D Controls Deck (Reset, Big Push Button, Zikr Changer) -->
+        <div class="flex items-center justify-around w-full max-w-sm">
+          
+          <!-- Reset Button -->
+          <div class="flex flex-col items-center">
+            <button id="tasbeeh-reset" class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-b from-rose-500 to-rose-700 hover:from-rose-400 hover:to-rose-600 active:scale-95 text-white font-bold text-sm shadow-xl border-b-4 border-rose-950 transition-all flex items-center justify-center" title="Reset Counter">
+              ↺
+            </button>
+            <span class="text-[10px] text-slate-300 mt-1.5 uppercase font-semibold tracking-wider">रीसेट</span>
+          </div>
+
+          <!-- Main 3D Gold Embossed Push Button -->
+          <div class="flex flex-col items-center">
+            <button id="tasbeeh-count" class="btn-gold-3d w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-yellow-100/50 text-slate-950 font-black flex flex-col items-center justify-center select-none active:outline-none" aria-label="गिनें">
+              <span class="text-2xl sm:text-3xl leading-none font-luxury">गिनें</span>
+              <span class="text-[10px] sm:text-xs tracking-widest font-extrabold opacity-80 uppercase mt-1">TAP PUSH</span>
+            </button>
+          </div>
+
+          <!-- Switch Zikr Button -->
+          <div class="flex flex-col items-center">
+            <button id="tasbeeh-change" class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-b from-indigo-500 to-indigo-700 hover:from-indigo-400 hover:to-indigo-600 active:scale-95 text-white font-bold text-sm shadow-xl border-b-4 border-indigo-950 transition-all flex items-center justify-center" title="Change Zikr">
+              ⇄
+            </button>
+            <span class="text-[10px] text-slate-300 mt-1.5 uppercase font-semibold tracking-wider">ज़िक्र बदलें</span>
+          </div>
+        </div>
+
+        <!-- Feature Badges -->
+        <div class="mt-5 flex items-center gap-3 text-[11px] text-amber-200/70 font-medium">
+          <span>🔊 ऑडियो इफ़ेक्ट</span>
+          <span>•</span>
+          <span>📳 हैप्टिक कंपन</span>
+          <span>•</span>
+          <span>✨ 33 लैप अलर्ट</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- QUICK 30-DAY CALENDAR GRID                 -->
+    <!-- ========================================== -->
+    <section class="mb-6">
+      <h3 class="text-center text-xs font-luxury font-bold text-amber-300/90 mb-3 uppercase tracking-widest">
+        30 दिनों का त्वरित चयन (30 Days Quick Grid)
+      </h3>
+      <div id="day-grid" class="grid grid-cols-6 sm:grid-cols-10 gap-2"></div>
+    </section>
+
+    <!-- Footer Note -->
+    <footer class="text-center py-4 text-xs text-amber-200/60 border-t border-amber-500/20 font-luxury">
+      रमज़ान मुबारक़ • मक्का शरीफ़ पृष्ठभूमि संस्करण • Daily Duas & 3D Tasbeeh
+    </footer>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC & 30-DAY DATASET          -->
+  <!-- ========================================== -->
+  <script>
+    // Complete 30 Days Duas Dataset
+    const duas = [
+      { day: 1, arabic: "اَللّٰهُمَّ اجْعَلْ صِيَامِيْ فِيْهِ صِيَامَ الصَّائِمِيْنَ", hindi: "अल्लाहुम्मज-अल सियामी फ़ीहि सियामस-साइमीन", meaning: "ऐ अल्लाह! इस महीने में मेरे रोज़े को सच्चे और मुख़लिस रोज़ेदारों जैसा बना दे।", english: "O Allah! Make my fasting in it the fast of those who sincerely keep fast.", theme: "इख़लास (Sincerity)" },
+      { day: 2, arabic: "اَللّٰهُمَّ قَرِّبْنِيْ فِيْهِ اِلٰى مَرْضَاتِكَ", hindi: "अल्लाहुम्मा क़र्रिब्नी फ़ीहि इला मर्ज़ातिक", meaning: "ऐ अल्लाह! मुझे अपनी रज़ा और ख़ुशी के करीब कर दे और नाराज़गी से बचा।", english: "O Allah! Bring me closer to Your divine pleasure.", theme: "रज़ा (Pleasure)" },
+      { day: 3, arabic: "اَللّٰهُمَّ ارْزُقْنِيْ فِيْهِ الذِّهْنَ وَالتَّنْبِيْهَ", hindi: "अल्लाहुम्मर-ज़ुक़नी फ़ीहिज़-ज़िहना वत-तंबीह", meaning: "ऐ अल्लाह! मुझे इस महीने में हिकमत, समझदारी और रूहानी बेदारी अता फ़रमा।", english: "O Allah! Bestow upon me spiritual wisdom and alertness.", theme: "हिकमत (Wisdom)" },
+      { day: 4, arabic: "اَللّٰهُمَّ قَوِّنِيْ فِيْهِ عَلٰى اِقَامَةِ اَمْرِكَ", hindi: "अल्लाहुम्मा क़व्विनी फ़ीहि अला इक़ामति अम्रिक", meaning: "ऐ अल्लाह! अपने अहकाम पर क़ायम रहने और अमल करने के लिए मुझे ताक़त दे।", english: "O Allah! Grant me strength to stand firm upon Your commands.", theme: "कुव्वत (Strength)" },
+      { day: 5, arabic: "اَللّٰهُمَّ اجْعَلْنِيْ فِيْهِ مِنَ الْمُسْتَغْفِرِيْنَ", hindi: "अल्लाहुम्मज-अल्नी फ़ीहि मिनल-मुस्तग़फ़िरीन", meaning: "ऐ अल्लाह! मुझे सच्चे दिल से माफ़ी मांगने वाले बंदों में शुमार कर।", english: "O Allah! Count me among those who constantly seek Your pardon.", theme: "तौबा (Forgiveness)" },
+      { day: 6, arabic: "اَللّٰهُمَّ طَهِّرْنِيْ فِيْهِ مِنَ الدَّنَسِ وَالاَقْذَارِ", hindi: "अल्लाहुम्मा तह्हिर्नी फ़ीहि मिनद-दनसि वल-अक़ज़ार", meaning: "ऐ अल्लाह! मुझे गुनाहों, ख़ामियों और हर क़िस्म की बुराइयों से पाक-साफ़ कर दे।", english: "O Allah! Purify me from every stain, impurity, and shortcoming.", theme: "तहारत (Purity)" },
+      { day: 7, arabic: "اَللّٰهُمَّ اَعِنِّيْ فِيْهِ عَلٰى صِيَامِهِ وَقِيَامِهِ", hindi: "अल्लाहुम्मा अइन्नी फ़ीहि अला सियामिहि व क़ियामिह", meaning: "ऐ अल्लाह! रोज़ा रखने और रातों की इबादत (क़ियाम) में मेरी मदद फ़रमा।", english: "O Allah! Assist me through its fasts and nightly devotions.", theme: "मदद (Divine Help)" },
+      { day: 8, arabic: "اَللّٰهُمَّ ارْزُقْنِيْ فِيْهِ رَحْمَةَ الاَيْتَامِ", hindi: "अल्लाहुम्मर-ज़ुक़नी फ़ीहि रहमतल-अयताम", meaning: "ऐ अल्लाह! यतीमों पर रहम करने और ज़रूरतमंदों को खाना खिलाने की तौफ़ीक़ दे।", english: "O Allah! Bless me with compassion for orphans and generosity for the poor.", theme: "शफ़क़त (Compassion)" },
+      { day: 9, arabic: "اَللّٰهُمَّ اجْعَلْ لِيْ فِيْهِ نَصِيْبًا مِنْ رَحْمَتِكَ", hindi: "अल्लाहुम्मज-अल ली फ़ीहि नसीबम-मिन रहमतिक", meaning: "ऐ अल्लाह! अपनी बेपनाह और वसीअ़ रहमत में से मेरा हिस्सा मुक़र्रर फ़रमा।", english: "O Allah! Allot for me an abundant share of Your limitless mercy.", theme: "रहमत (Mercy)" },
+      { day: 10, arabic: "اَللّٰهُمَّ اجْعَلْنِيْ فِيْهِ مِنَ الْمُتَوَكِّلِيْنَ عَلَيْكَ", hindi: "अल्लाहुम्मज-अल्नी फ़ीहि मिनल-मुतवक्किलीन अलैक", meaning: "ऐ अल्लाह! मुझे उन बंदों में शामिल कर जो हर हाल में सिर्फ़ तुझ पर भरोसा करते हैं।", english: "O Allah! Place me among those who place their total trust in You.", theme: "तवक्कुल (Trust)" },
+      { day: 11, arabic: "اَللّٰهُمَّ حَبِّبْ اِلَيَّ فِيْهِ الاِحْسَانَ", hindi: "अल्लाहुम्मा हब्बिब इलय्य फ़ीहिल-इहसान", meaning: "ऐ अल्लाह! मेरे दिल में भलाई और एहसान करने का शौक व मोहब्बत पैदा कर।", english: "O Allah! Make goodness and kindness beloved to my heart.", theme: "नेकी (Kindness)" },
+      { day: 12, arabic: "اَللّٰهُمَّ زَيِّنِّيْ فِيْهِ بِالسِّتْرِ وَالْعَفَافِ", hindi: "अल्लाहुम्मा ज़य्यिन्नी फ़ीहि बिस-सित्रि वल-अफ़ाफ़", meaning: "ऐ अल्लाह! मुझे पर्दापोशी, पाकदामनी और क़नाअ़त के साथ ज़ीनत बख़्श।", english: "O Allah! Adorn me with modesty, purity, and pious contentment.", theme: "पाकदामनी (Modesty)" },
+      { day: 13, arabic: "اَللّٰهُمَّ لاَ تُؤَاخِذْنِيْ فِيْهِ بِالْعَثَرَاتِ", hindi: "अल्लाहुम्मा ला तुआख़िज़्नी फ़ीहि बिल-असरात", meaning: "ऐ अल्लाह! मेरी ग़लतियों, भूल-चूक और कोताहियों पर मुझे न पकड़।", english: "O Allah! Do not hold me accountable for my errors and lapses.", theme: "दरगुज़र (Pardon)" },
+      { day: 14, arabic: "اَللّٰهُمَّ ارْزُقْنِيْ فِيْهِ طَاعَةَ الْخَاشِعِيْنَ", hindi: "अल्लाहुम्मर-ज़ुक़नी फ़ीहि ताअतल-ख़ाशिईन", meaning: "ऐ अल्लाह! मुझे आजिज़ी और ख़ुलूस के साथ झुकने वालों जैसी इबादत नसीब कर।", english: "O Allah! Bestow upon me the devotion of the sincere and humble.", theme: "खुशूअ (Humility)" },
+      { day: 15, arabic: "اَللّٰهُمَّ وَفِّقْنِيْ فِيْهِ لِمُوَافَقَةِ الاَبْرَارِ", hindi: "अल्लाहुम्मा वफ़्फ़िक़नी फ़ीहि लि-मुवाफ़क़तिल-अबरार", meaning: "ऐ अल्लाह! मुझे नेक और सच्चे इंसानों का साथ और क़ुरबत अता फ़रमा।", english: "O Allah! Grant me the noble fellowship of the righteous.", theme: "नेक सोहबत (Good Company)" },
+      { day: 16, arabic: "اَللّٰهُمَّ اهْدِنِيْ فِيْهِ لِصَالِحِ الاَعْمَالِ", hindi: "अल्लाहुम्महदीनी फ़ीहि लि-सालिहिल-आमाल", meaning: "ऐ अल्लाह! मुझे अच्छे, नेक और पसंदीदा आमाल करने की हिदायत फ़रमा।", english: "O Allah! Guide me unerringly toward pious and righteous actions.", theme: "हिदायत (Guidance)" },
+      { day: 17, arabic: "اَللّٰهُمَّ نَبِّهْنِيْ فِيْهِ لِبَرَكَاتِ اَسْحَارِهِ", hindi: "अल्लाहुम्मा नब्बिह्नी फ़ीहि लि-बरकाति असहारिह", meaning: "ऐ अल्लाह! मुझे सहरी के मुक़द्दस वक़्त की बरकतों और फ़ज़ीलतों से वाक़िफ़ रख।", english: "O Allah! Awaken my heart to the abundant blessings of dawn (Suhoor).", theme: "सहरी की बरकत (Suhoor)" },
+      { day: 18, arabic: "اَللّٰهُمَّ وَفِّرْ فِيْهِ حَظِّيْ مِنْ بَرَكَاتِهِ", hindi: "अल्लाहुम्मा वफ़्फ़िर फ़ीहि हज़्ज़ी मिम-बरकातिह", meaning: "ऐ अल्लाह! इस बाबरकत महीने की नेमतों से मेरा हिस्सा बढ़ा दे।", english: "O Allah! Multiply my portion of this holy month's blessings.", theme: "बरकत (Abundance)" },
+      { day: 19, arabic: "اَللّٰهُمَّ افْتَحْ لِيْ فِيْهِ اَبْوَابَ الْجِنَانِ", hindi: "अल्लाहुम्मफ़-तह ली फ़ीहि अबवाबाल-जिनान", meaning: "ऐ अल्लाह! मेरे लिए जन्नत और रहमत के दरवाज़े खोल दे।", english: "O Allah! Throw open for me the gates of Paradise.", theme: "जन्नत (Paradise)" },
+      { day: 20, arabic: "اَللّٰهُمَّ اغْلِقْ عَنِّيْ فِيْهِ اَبْوَابَ النِّيْرَانِ", hindi: "अल्लाहुम्मा अग़्लिक़ अन्नी फ़ीहि अबवाबन-नीरान", meaning: "ऐ अल्लाह! मुझ पर से जहन्नुम (दोज़ख़) के दरवाज़े हमेशा के लिए बंद कर दे।", english: "O Allah! Shut firmly against me the gates of Hellfire.", theme: "निजात (Salvation)" },
+      { day: 21, arabic: "اَللّٰهُمَّ اجْعَلْ لِيْ فِيْهِ اِلٰى مَرْضَاتِكَ دَلِيْلاً", hindi: "अल्लाहुम्मज-अल ली फ़ीहि इला मर्ज़ातिक दलीला", meaning: "ऐ अल्लाह! अपनी रज़ा और ख़ुशी तक पहुँचने का सीधा रास्ता मुझे दिखा।", english: "O Allah! Guide me with a luminous sign toward Your pleasure.", theme: "रास्ता (Direction)" },
+      { day: 22, arabic: "اَللّٰهُمَّ افْتَحْ लِيْ فِيْهِ اَبْوَابَ فَضْلِكَ", hindi: "अल्लाहुम्मफ़-तह ली फ़ीहि अबवाब फ़ज़्लिक", meaning: "ऐ अल्लाह! मेरे लिए अपने फ़ज़्ल, करम और बरकतों के दरवाज़े खोल दे।", english: "O Allah! Unfold for me the portals of Your divine bounty.", theme: "फ़ज़्ल (Bounty)" },
+      { day: 23, arabic: "اَللّٰهُمَّ اغْسِلْنِيْ فِيْهِ مِنَ الذُّنُوْبِ", hindi: "अल्लाहुम्मग़-सिल्नी फ़ीहि मिनज़-ज़ुनूब", meaning: "ऐ अल्लाह! मुझे इस महीने में गुनाहों और दिल की मैल से धोकर साफ़ कर दे।", english: "O Allah! Wash away all my transgressions and inner faults.", theme: "तहारत (Cleansing)" },
+      { day: 24, arabic: "اَللّٰهُمَّ اِنِّيْ اَسْأَلُكَ فِيْهِ مَا يُرْضِيْكَ", hindi: "अल्लाहुम्मा इन्नी अस-अलुक फ़ीहि मा युर्ज़ीक", meaning: "ऐ अल्लाह! मैं तुझसे वही मांगता हूँ जिससे तू राज़ी और ख़ुश हो जाए।", english: "O Allah! I seek from You that which brings Your greatest pleasure.", theme: "दुआ (Supplication)" },
+      { day: 25, arabic: "اَللّٰهُمَّ اجْعَلْنِيْ فِيْهِ مُحِبًّا لِاَوْلِيَائِكَ", hindi: "अल्लाहुम्मज-अल्नी फ़ीहि मुहिब्बल-लि-औलियाइक", meaning: "ऐ अल्लाह! मुझे अपने नेक बंदों और औलिया से सच्ची मोहब्बत करने वाला बना।", english: "O Allah! Endow me with sincere love for Your holy servants.", theme: "मोहब्बत (Divine Love)" },
+      { day: 26, arabic: "اَللّٰهُمَّ اجْعَلْ سَعْيِيْ فِيْهِ مَشْكُوْرًا", hindi: "अल्लाहुम्मज-अल सअयी फ़ीहि मशकूरन", meaning: "ऐ अल्लाह! मेरी मेहनत, इबादत और कोशिशों को मक़बूल और कामयाब बना दे।", english: "O Allah! Make all my righteous strivings accepted and rewarded.", theme: "क़बूलियत (Acceptance)" },
+      { day: 27, arabic: "اَللّٰهُمَّ ارْزُقْنِيْ فِيْهِ فَضْلَ لَيْلَةِ الْقَدْرِ", hindi: "अल्लाहुम्मर-ज़ुक़नी फ़ीहि फ़ज़्ल लैलतिल-क़द्र", meaning: "ऐ अल्लाह! मुझे शब-ए-क़द्र (लैलतुल क़द्र) की अज़ीम रात की बरकतें नसीब फ़रमा।", english: "O Allah! Bestow upon me the unmatched majesty of Laylatul Qadr.", theme: "शब-ए-क़द्र (Laylatul Qadr)" },
+      { day: 28, arabic: "اَللّٰهُمَّ وَفِّرْ حَظِّيْ فِيْهِ مِنَ النَّوَافِلِ", hindi: "अल्लाहुम्मा वफ़्फ़िर हज़्ज़ी फ़ीहि मिनन-नवाफ़िल", meaning: "ऐ अल्लाह! मुझे नफ़्ल इबादतों का भरपूर ज़ौक़ और सवाब अता फ़रमा।", english: "O Allah! Enrich my devotion with numerous voluntary acts of worship.", theme: "नवाफ़िल (Nawafil)" },
+      { day: 29, arabic: "اَللّٰهُمَّ غَشِّنِيْ فِيْهِ بِالرَّحْمَةِ", hindi: "अल्लाहुम्मा ग़श्शिनी फ़ीहि बिर-रहमह", meaning: "ऐ अल्लाह! मुझे अपनी रहमत, हिफ़ाज़त और पनाह की चादर में ढांप ले।", english: "O Allah! Clothe me in the protective mantle of Your divine mercy.", theme: "रहमत (Divine Grace)" },
+      { day: 30, arabic: "اَللّٰهُمَّ اجْعَلْ صِيَامِيْ فِيْهِ بِالشُّكْرِ وَالْقَبُوْلِ", hindi: "अल्लाहुम्मज-अल सियामी फ़ीहि बिश-शुक्री वल-क़ुबूल", meaning: "ऐ अल्लाह! मेरे तमाम रोज़ों को शुक्रगुज़ारी के साथ अपनी बारगाह में क़बूल फ़रमा।", english: "O Allah! Accept my fasts with deepest thanksgiving and pleasure.", theme: "शुक्राना (Gratitude)" }
+    ];
+
+    let currentDay = 1;
+
+    // Web Audio Synthesizer (Realistic Click & Brass Milestone Chime)
+    let audioCtx = null;
+    function playSound(frequency = 700, type = 'sine', duration = 0.05, gainLevel = 0.2) {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+        gain.gain.setValueAtTime(gainLevel, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        // Fallback gracefully
+      }
+    }
+
+    function renderDay(day) {
+      const item = duas[day - 1];
+      document.getElementById('badge-day').textContent = `रोज़ा ${day} • Day ${day}`;
+      document.getElementById('arabic-text').textContent = item.arabic;
+      document.getElementById('hindi-trans').textContent = item.hindi;
+      document.getElementById('hindi-meaning').textContent = item.meaning;
+      document.getElementById('english-trans').textContent = `"${item.english}"`;
+      document.getElementById('theme-tag').textContent = item.theme;
+
+      // Update Quick Selection Grid
+      document.querySelectorAll('#day-grid button').forEach((btn, idx) => {
+        if (idx + 1 === day) {
+          btn.className = "w-full aspect-square rounded-xl font-bold text-xs bg-gradient-to-tr from-amber-400 via-yellow-300 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/50 scale-105 border border-yellow-100";
+        } else {
+          btn.className = "w-full aspect-square rounded-xl font-medium text-xs bg-slate-900/85 text-slate-300 border border-amber-500/25 hover:border-amber-400/60 hover:bg-slate-800 transition-all active:scale-95";
+        }
+      });
+    }
+
+    function initGrid() {
+      const grid = document.getElementById('day-grid');
+      grid.innerHTML = '';
+      for (let i = 1; i <= 30; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.addEventListener('click', () => {
+          currentDay = i;
+          renderDay(currentDay);
+          playSound(550, 'sine', 0.04);
+        });
+        grid.appendChild(btn);
+      }
+    }
+
+    // Days Navigation
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      currentDay = currentDay > 1 ? currentDay - 1 : 30;
+      renderDay(currentDay);
+      playSound(460, 'sine', 0.04);
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      currentDay = currentDay < 30 ? currentDay + 1 : 1;
+      renderDay(currentDay);
+      playSound(460, 'sine', 0.04);
+    });
+
+    // Touch Swipe Left/Right Gesture Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeCard = document.getElementById('swipe-card');
+
+    swipeCard.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    swipeCard.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          // Swipe Left -> Next Day
+          currentDay = currentDay < 30 ? currentDay + 1 : 1;
+        } else {
+          // Swipe Right -> Prev Day
+          currentDay = currentDay > 1 ? currentDay - 1 : 30;
+        }
+        renderDay(currentDay);
+        playSound(520, 'sine', 0.04);
+      }
+    }, { passive: true });
+
+    // Keyboard Arrow Keys Navigation
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') {
+        currentDay = currentDay > 1 ? currentDay - 1 : 30;
+        renderDay(currentDay);
+        playSound(460, 'sine', 0.04);
+      } else if (e.key === 'ArrowRight') {
+        currentDay = currentDay < 30 ? currentDay + 1 : 1;
+        renderDay(currentDay);
+        playSound(460, 'sine', 0.04);
+      }
+    });
+
+    // ==========================================
+    // 3D DIGITAL TASBEEH & BEADS CONTROLLER
+    // ==========================================
+    let tasbeehCount = 0;
+    let lapCount = 0;
+    const zikrCollection = [
+      { en: "SubhanAllah", hi: "सुब्हानअल्लाह" },
+      { en: "Alhamdulillah", hi: "अल्हम्दुलिल्लाह" },
+      { en: "Allahu Akbar", hi: "अल्लाहु अकबर" },
+      { en: "Astaghfirullah", hi: "अस्तग़फ़िरुल्लाह" },
+      { en: "La ilaha illallah", hi: "ला इलाहा इल्लल्लाह" },
+      { en: "Subhanallahi Wa Bihamdihi", hi: "सुब्हानल्लाहि व बिहम्दिही" }
+    ];
+    let zikrIdx = 0;
+
+    const tasbeehDisplay = document.getElementById('tasbeeh-display');
+    const tasbeehPhrase = document.getElementById('tasbeeh-phrase');
+    const tasbeehPhraseHi = document.getElementById('tasbeeh-phrase-hi');
+    const tasbeehLap = document.getElementById('tasbeeh-lap');
+    const tasbeehBtn = document.getElementById('tasbeeh-count');
+    const beads = document.querySelectorAll('.tasbeeh-bead');
+
+    function updateTasbeehUI() {
+      tasbeehDisplay.textContent = tasbeehCount.toString().padStart(2, '0');
+      tasbeehLap.textContent = `चक्र (Lap): ${lapCount} / 33`;
+
+      // Animate prayer beads string
+      const beadIndex = tasbeehCount % beads.length;
+      beads.forEach((bead, i) => {
+        if (i === beadIndex) {
+          bead.classList.add('active-bead');
+        } else {
+          bead.classList.remove('active-bead');
+        }
+      });
+    }
+
+    tasbeehBtn.addEventListener('click', () => {
+      tasbeehCount++;
+      playSound(820, 'sine', 0.035, 0.25);
+
+      if (navigator.vibrate) {
+        navigator.vibrate(22);
+      }
+
+      if (tasbeehCount === 33) {
+        lapCount++;
+        tasbeehCount = 0;
+        // Celebration royal chime
+        playSound(880, 'triangle', 0.1, 0.3);
+        setTimeout(() => playSound(1174, 'triangle', 0.18, 0.35), 90);
+        if (navigator.vibrate) {
+          navigator.vibrate([60, 40, 80]);
+        }
+      }
+      updateTasbeehUI();
+    });
+
+    document.getElementById('tasbeeh-reset').addEventListener('click', () => {
+      tasbeehCount = 0;
+      lapCount = 0;
+      updateTasbeehUI();
+      playSound(340, 'sine', 0.07);
+      if (navigator.vibrate) navigator.vibrate(40);
+    });
+
+    document.getElementById('tasbeeh-change').addEventListener('click', () => {
+      zikrIdx = (zikrIdx + 1) % zikrCollection.length;
+      tasbeehPhrase.textContent = zikrCollection[zikrIdx].en;
+      tasbeehPhraseHi.textContent = zikrCollection[zikrIdx].hi;
+      tasbeehCount = 0;
+      updateTasbeehUI();
+      playSound(620, 'sine', 0.05);
+      if (navigator.vibrate) navigator.vibrate(25);
+    });
+
+    // Initialize application on load
+    window.addEventListener('DOMContentLoaded', () => {
+      initGrid();
+      renderDay(currentDay);
+      updateTasbeehUI();
+    });
+  </script>
+</body>
+</html>
